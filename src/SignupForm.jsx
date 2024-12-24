@@ -83,11 +83,10 @@ const SignupForm = ({ onClose }) => {
   return (
     <div className='signup-form-container'>
       <ToastContainer />
-     
 
       <div className='form-header'>
-        <h2>Unlock Your Potential</h2>
-        <p>Join a community of learners and start your journey today!</p>
+        <h2>Unlock Your Potential to dicover lost items</h2>
+        <p>Get started with Gael's community today!</p>
       </div>
       {loading ? (
         <div className='loader'>

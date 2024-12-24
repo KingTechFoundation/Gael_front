@@ -159,8 +159,6 @@
   height: 25vh;
 
   border-radius: 8px;
-
- 
 }
 
 .success-message {
@@ -224,16 +222,6 @@
 
 .success-message h1 {
   animation: pulse 1s ease-in-out infinite;
-}
-
-.success-message {
-  text-align: center;
-  padding: 25px;
-  border-radius: 15px;
-  background-color: #d4edda;
-  color: #155724;
-  max-width: 400px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .success-message h1 {
