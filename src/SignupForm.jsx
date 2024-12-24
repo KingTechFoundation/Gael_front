@@ -83,9 +83,7 @@ const SignupForm = ({ onClose }) => {
   return (
     <div className='signup-form-container'>
       <ToastContainer />
-      <button onClick={onClose} className='close-button'>
-        &times;
-      </button>
+     
 
       <div className='form-header'>
         <h2>Unlock Your Potential</h2>
