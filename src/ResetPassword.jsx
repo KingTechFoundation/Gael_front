@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const ResetPassword = () => {
   const { resetToken } = useParams();
@@ -107,7 +108,7 @@ const ResetPassword = () => {
               onClick={() => setShowPassword(!showPassword)}
               style={styles.toggleButton}
             >
-              {showPassword ? 'Hide' : 'Show'}
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
         </div>
@@ -126,7 +127,7 @@ const ResetPassword = () => {
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               style={styles.toggleButton}
             >
-              {showConfirmPassword ? 'Hide' : 'Show'}
+              {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
         </div>
@@ -144,15 +145,15 @@ const ResetPassword = () => {
 
 const styles = {
   container: {
-    maxWidth: '900px',
-    margin: '0 auto',
+    maxWidth: '400px',
+    margin: '50px auto',
     padding: '20px',
     backgroundColor: '#fff',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    textAlign: 'center',
   },
   heading: {
-    textAlign: 'center',
     marginBottom: '20px',
     color: '#333',
   },
@@ -164,6 +165,7 @@ const styles = {
   inputContainer: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
   },
   label: {
     fontSize: '14px',
@@ -172,10 +174,12 @@ const styles = {
   },
   inputWrapper: {
     position: 'relative',
+    width: '100%',
+    maxWidth: '300px',
   },
   input: {
-    width: '300px',
-    padding: '10px',
+    width: '100%',
+    padding: '10px 40px 10px 10px',
     border: '1px solid #ccc',
     borderRadius: '4px',
     fontSize: '16px',
@@ -188,9 +192,9 @@ const styles = {
     transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
-    color: '#007bff',
     cursor: 'pointer',
-    fontSize: '14px',
+    color: '#007bff',
+    fontSize: '18px',
   },
   submitButton: {
     padding: '12px',
@@ -200,11 +204,13 @@ const styles = {
     color: '#fff',
     fontSize: '16px',
     cursor: 'pointer',
+    width: '100%',
+    maxWidth: '300px',
+    margin: '0 auto',
   },
   error: {
     color: 'red',
     fontSize: '14px',
-    textAlign: 'center',
   },
 };
 
