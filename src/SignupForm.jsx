@@ -70,8 +70,8 @@ const SignupForm = ({ onClose }) => {
 
   if (registrationSuccess) {
     return (
-      <div className='success-message-container'>
-        <div className='success-message'>
+      <div className='success-message-containerd'>
+        <div className='success-messaged'>
           <h1>✅</h1>
           <p>Registration Successful!</p>
           <p>Please check your email for verification.</p>

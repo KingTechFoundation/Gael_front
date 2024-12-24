@@ -151,7 +151,7 @@
   text-transform: uppercase;
 }
 
-.success-message-container {
+.success-message-containerd {
   margin-top: 200px;
   display: flex;
   justify-content: center;
@@ -161,7 +161,7 @@
   border-radius: 8px;
 }
 
-.success-message {
+.success-messaged {
   background-color: #ffffff;
   padding: 40px 30px;
   border-radius: 10px;
@@ -203,7 +203,7 @@
 
 /* Other styles (e.g., form and loader) remain unchanged */
 
-.success-message p:first-child {
+.success-messaged p:first-child {
   font-weight: bold; /* Make the "Registration Successful!" bold */
 }
 
@@ -220,15 +220,15 @@
   }
 }
 
-.success-message h1 {
+.success-messaged h1 {
   animation: pulse 1s ease-in-out infinite;
 }
 
-.success-message h1 {
+.success-messaged h1 {
   font-size: 2.5em;
 }
 
-.success-message p {
+.success-messaged p {
   font-size: 1.2em;
 }
 
