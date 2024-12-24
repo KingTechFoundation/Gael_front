@@ -34,8 +34,8 @@ const ForgotPassword = () => {
 
   if (messageSent) {
     return (
-      <div className='success-message-container'>
-        <div className='success-message-card'>
+      <div className='success-message-containerz'>
+        <div className='success-message-cardz'>
           <h1>Password Reset Sent</h1>
           <p>
             A password reset email has been sent to <strong>{email}</strong>.
