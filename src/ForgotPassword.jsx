@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify'; // Import ToastContainer
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './ForgotPassword.css'; // Apply custom CSS if needed
+import './ForgotPassword.css';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,11 +17,7 @@ const ForgotPassword = () => {
       await axios.post(`${process.env.API_URL}/request-password-reset`, {
         email,
       });
-      toast.success('Password reset email sent! Please check your inbox.', {
-        position: toast.POSITION.TOP_CENTER,
-        autoClose: 5000,
-      });
-      setEmail('');
+      setMessageSent(true); // Show success message on successful submission
     } catch (err) {
       toast.error(
         err.response?.data?.message ||
@@ -35,11 +32,26 @@ const ForgotPassword = () => {
     }
   };
 
+  if (messageSent) {
+    return (
+      <div className='success-message-container'>
+        <div className='success-message-card'>
+          <h1>Password Reset Sent</h1>
+          <p>
+            A password reset email has been sent to <strong>{email}</strong>.
+            Please check your inbox and follow the instructions to reset your
+            password.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className='forgot-password-containerz'>
-      <form onSubmit={handleSubmit} className='forgot-password-formz'>
+    <div className='forgot-password-container'>
+      <form onSubmit={handleSubmit} className='forgot-password-form'>
         <h2>Forgot Password</h2>
-        <div className='form-groupz'>
+        <div className='form-group'>
           <label htmlFor='email'>Enter your email</label>
           <input
             type='email'
@@ -50,11 +62,10 @@ const ForgotPassword = () => {
             required
           />
         </div>
-        <button type='submit' className='submit-buttonz' disabled={loading}>
+        <button type='submit' className='submit-button' disabled={loading}>
           {loading ? 'Sending...' : 'Submit'}
         </button>
       </form>
-      {/* ToastContainer must be included for the toast notifications */}
       <ToastContainer />
     </div>
   );
