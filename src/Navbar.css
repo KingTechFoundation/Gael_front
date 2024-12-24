@@ -1,0 +1,134 @@
+.navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 63, 138, 0.85),
+    rgba(0, 85, 183, 0.85)
+  );
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.navbar.dark {
+  background: linear-gradient(
+    90deg,
+    rgba(51, 51, 51, 0.85),
+    rgba(85, 85, 85, 0.85)
+  );
+}
+
+.dropdown-menu.dark {
+  background: linear-gradient(
+    90deg,
+    rgba(51, 51, 51, 0.85),
+    rgba(85, 85, 85, 0.85)
+  );
+}
+
+.logo img {
+  width: 120px;
+  height: 50px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.menu-buttons {
+  display: flex;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #f02a00, #f9c80e);
+  color: white;
+  transform: scale(1.05);
+}
+
+.menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 63, 138, 0.85),
+    rgba(0, 85, 183, 0.85)
+  );
+
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu .btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-buttons {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 19px;
+    border: 1px solid white;
+    width: 200px;
+    right: 0;
+    border-radius: 3px;
+  }
+}
